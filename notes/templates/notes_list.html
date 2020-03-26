@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+
+{% block content%}
+    <div class="container" style="padding: 10px; margin-top: 20px;">
+        <div class="row d-flex justify-content-center">
+                <h2><a class="addnote_heading" href="{% url 'notes:add' %}"><span class="fa fa-plus" style="color:green;"></span>Add A New Note</a></h2>
+        </div>
+            <div class="row"><h1 class="yourNotes">Your Notes</h1></div>
+            <div class="notes">
+            {% for note in notes %}
+                <div class="card border-dark mb-3">
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">{{ note.title }}</h5>
+                        <p class="card-text text-truncate">{{ note.content }}</p>
+                        <p  class="card-text"><span style="font-weight: 600;"> Last Updated: </span> {{ note.edited }}</p>
+                        <div class="row d-flex justify-content-center">
+                            <a href="{% url 'notes:edit' id=note.id %}" class="btn btn-warning" style="margin-right: 5px;">Edit</a>
+                            <a href="{% url 'notes:delete' id=note.id %}" class="btn btn-danger" style="margin-left: 5px;">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="row d-flex justify-content-center">
+                    <h4 style="font-family: 'Courgette', cursive; color: brown;">You have not added any notes!</h4>
+                </div>
+            {% endfor %}
+            
+            </div>
+        </div>
+{% endblock %}

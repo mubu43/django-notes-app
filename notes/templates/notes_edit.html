@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+
+{% block content %}
+    <div class="add-note row d-flex justify-content-center">
+        <h2>Edit Note</h2>
+    </div>
+    <div class="container col-md-offset-3 col-md-4">
+        <form class="site-form" action="{% url 'notes:edit' id=id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row d-flex flex-column justify-content-center">
+                {{ form }}
+            <input type="submit" value="Update" class="btn btn-success" style="margin-top: 7px;">
+            </div>
+        </form>
+    </div>
+{% endblock %}

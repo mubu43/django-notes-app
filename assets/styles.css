@@ -1,0 +1,26 @@
+/*
+FONT FAMILIES
+font-family: 'Indie Flower', cursive;
+font-family: 'Pacifico', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Courgette', cursive;
+font-family: 'Cookie', cursive;
+font-family: 'Tangerine', cursive;
+
+*/
+
+img[title='logo'] {
+    max-width: 100px;
+    max-height: 50px;;
+}
+
+a.appheading{
+    margin: 5px auto;
+    font-family: 'Pacifico', cursive;
+}
+
+h1.yourNotes{
+    font-family: 'Tangerine', cursive;
+    font-weight: 600;
+    color: midnightblue;
+}
